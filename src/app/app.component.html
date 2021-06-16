@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title>{{title}}</title>
+</head>
+<body>
+
+    <nav class="nav mat-elevation-z8">
+        <ul class="nav-list">
+            <li class="nav-links logo">{{title}}</li>
+        </ul>
+        
+    </nav>
+    
+    <div class="main" >
+
+      <div class="buttonGroup">
+        <button mat-raised-button color="primary" (click)="addDrone()">Add Drone</button>
+        <button mat-raised-button color="warn" (click)="destroy()">Destroy</button>
+      </div>
+      <div class="toggle">
+        <mat-slide-toggle  color="primary" (change)="freezeDrones = $event.checked" >Freeze</mat-slide-toggle>
+      </div>
+    </div>
+
+    <div class="dronesBody" #scroll 
+    [scrollTop]="windowHeight" [scrollLeft]="windowWidth" >
+    <div class="drones" >
+      <div class="droneArray" *ngFor="let drone of dronesArray" >
+        <div class="drone" (click)="selectedDrone=drone.id" 
+             [ngStyle]="{
+                  background: selectedDrone == drone.id ? '#3f51b5' : '',
+                  'z-index':drone.id+1,
+                  'top.px':drone.topPadding,
+                  'left.px':drone.leftPadding,
+                  'display': !drone.alive ? 'none':''
+                }">
+          {{drone.id+1}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+    
+</body>
+</html>
