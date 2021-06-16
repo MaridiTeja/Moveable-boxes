@@ -3,8 +3,8 @@
 This project was created with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.4 with Node Version 12.16.1.
 
 ## Development server
-Make sure that the Angular CLI Matches
-Clone the GIT Repository `https://github.com/MaridiTeja/Moveable-boxes.git` then Run `npm install` to install all the modules
+Make sure that the Angular CLI Matches.<br/>
+Clone the GIT Repository `https://github.com/MaridiTeja/Moveable-boxes.git` then Run `npm install` to install all the modules.<br/>
 Run `ng serve` or `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 Or 
